@@ -8,7 +8,7 @@ app = Flask(__name__)
 
 @app.route("/")
 def home():
-    return {"message": "Weather Crisis Resource Allocation API running!"}
+    return render_template("index.html")
 
 
 @app.route("/web")
