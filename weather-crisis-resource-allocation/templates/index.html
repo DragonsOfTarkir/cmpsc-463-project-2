@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Weather Crisis Resource Allocator</title>
+</head>
+<body>
+    <h1>Resource Allocation System</h1>
+
+    <button onclick="runGreedy()">Run Greedy Allocation</button>
+
+    <pre id="output"></pre>
+
+    <script>
+        function runGreedy() {
+            fetch("/allocate/greedy", {
+                method: "POST",
+                headers: {
+                    "Content-Type": "application/json"
+                },
+                body: JSON.stringify({
+                    regions: [
+                        { name: "Region A", need: 40, urgency: 9 },
+                        { name: "Region B", need: 30, urgency: 5 },
+                        { name: "Region C", need: 20, urgency: 7 }
+                    ],
+                    depot: {
+                        name: "Central Depot",
+                        supply: 60
+                    }
+                })
+            })
+            .then(res => res.json())
+            .then(data => {
+                document.getElementById("output").innerText =
+                    JSON.stringify(data, null, 2);
+            });
+        }
+    </script>
+</body>
+</html>
