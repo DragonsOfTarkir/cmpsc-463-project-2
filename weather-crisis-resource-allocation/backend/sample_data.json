@@ -1,1 +1,9 @@
+{
+  "regions": [
+    {"name": "Region A", "need": 30, "urgency": 9},
+    {"name": "Region B", "need": 20, "urgency": 5},
+    {"name": "Region C", "need": 15, "urgency": 7}
+  ],
+  "supplies": 50
+}
 
