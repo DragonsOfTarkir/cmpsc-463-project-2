@@ -33,7 +33,6 @@
     <div class="tab active" data-panel="panel-regions">Regions (shared)</div>
     <div class="tab" data-panel="panel-greedy">Greedy</div>
     <div class="tab" data-panel="panel-knapsack">Knapsack</div>
-    <div class="tab" data-panel="panel-maxflow">Max-Flow</div>
   </div>
 
   <!-- Shared region input panel -->
@@ -79,33 +78,6 @@
     <h3>Result</h3>
     <pre id="knapsackOutput">{ }</pre>
   </div>
-
-  <!-- Max-flow panel -->
-  <div id="panel-maxflow" class="panel">
-    <h2>Max-Flow (Edmonds–Karp)</h2>
-    <p class="muted">Build a directed capacity matrix and choose source/sink node indices (0-based).</p>
-
-    <div class="controls" style="margin:8px 0 12px 0;">
-      <label>Nodes:</label>
-      <input id="nodeCount" type="number" min="2" value="4">
-      <button onclick="buildMatrix()" class="small">Build Matrix</button>
-      <span class="muted" style="margin-left:8px;">Matrix is <strong>n × n</strong> where entry (i,j) is capacity from i → j.</span>
-    </div>
-
-    <div id="matrixContainer"></div>
-
-    <div style="margin-top:8px;">
-      <label>Source:</label>
-      <input id="sourceNode" type="number" min="0" value="0">
-      <label style="margin-left:12px;">Sink:</label>
-      <input id="sinkNode" type="number" min="0" value="3">
-      <button onclick="runMaxflow()" style="margin-left:12px;">Run Max-Flow</button>
-    </div>
-
-    <h3>Result</h3>
-    <pre id="maxflowOutput">{ }</pre>
-  </div>
-
   <script>
     // ---------- Tabs ----------
     document.querySelectorAll('.tab').forEach(tab => {
@@ -228,39 +200,6 @@
         showError('knapsackOutput', e.message || e);
         document.getElementById('knapsackStatus').textContent = '';
       }
-    }
-
-    // ---------- MAX-FLOW UI ----------
-    function buildMatrix() {
-      const n = Math.max(2, parseInt(document.getElementById('nodeCount').value) || 4);
-      const container = document.getElementById('matrixContainer');
-      container.innerHTML = '';
-
-      // build table
-      const table = document.createElement('table');
-      table.setAttribute('border', '1');
-      table.style.borderCollapse = 'collapse';
-      table.style.marginBottom = '8px';
-      const tbody = document.createElement('tbody');
-
-      for (let i = 0; i < n; i++) {
-        const tr = document.createElement('tr');
-        for (let j = 0; j < n; j++) {
-          const td = document.createElement('td');
-          td.style.padding = '4px';
-          const input = document.createElement('input');
-          input.type = 'number';
-          input.min = 0;
-          input.value = (i === j) ? 0 : 0;
-          input.id = `cell_${i}_${j}`;
-          input.style.width = '70px';
-          td.appendChild(input);
-          tr.appendChild(td);
-        }
-        tbody.appendChild(tr);
-      }
-      table.appendChild(tbody);
-      container.appendChild(table);
     }
 
     // build initial matrix
