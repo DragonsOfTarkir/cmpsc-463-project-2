@@ -22,13 +22,15 @@ Users can enter region data, supply limits, and even build a max-flow capacity m
 ```
 weather-crisis-resource-allocation/
 │
-│
 ├── algorithms/
 │   ├── greedy.py
 │   ├── knapsack.py
-│
+├── models/
+│   ├── data_models.py
 ├── templates/
 │   └── index.html
+├── .gitignore
+├── app.json
 ├── app.py
 │
 └── README.md
