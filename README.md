@@ -13,10 +13,6 @@ Selects regions based on urgency and distributes resources as efficiently as pos
 
 Uses dynamic programming to maximize total urgency while staying under supply constraints.
 
-**Maximum Flow Routing**
-
-Models transportation networks as directed graphs to calculate the maximum possible resource flow from a depot to regions.
-
 **HTML User Interface for Algorithm Testing**
 
 Users can enter region data, supply limits, and even build a max-flow capacity matrix directly in the browser.
@@ -30,7 +26,7 @@ weather-crisis-resource-allocation/
 ├── algorithms/
 │   ├── greedy.py
 │   ├── knapsack.py
-│   ├── maxflow.py
+│
 ├── templates/
 │   └── index.html
 ├── app.py
