@@ -11,10 +11,6 @@ The backend includes:
 The frontend is a simple React interface that sends user inputs to the backend and displays the allocation results.
 
 ## How to Run
-cd backend
-pip install -r requirements.txt
-python app.py
-cd backend
-pip install -r requirements.txt
-python app.py
+run pip install flask flask-cors
+then run python app.py
 
