@@ -1,7 +1,7 @@
 # cmpsc-463-project-2
 
 ## Overview
-This project is a web-based tool designed to help allocate emergency resources during severe weather crises. The system uses Greedy selection, Knapsack optimization, Minimum Spanning Tree planning, and Maximum Flow routing.
+This project is a web-based tool designed to help allocate emergency resources during severe weather crises. The system uses Greedy selection and Knapsack optimization.
 The application is built with Python (Flask) on the backend and a simple HTML/JavaScript frontend.
 
 ## Features
